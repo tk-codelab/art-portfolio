@@ -1,0 +1,583 @@
+/* GLOBAL SETTINGS */
+/* Settings that are used throughout the whole site. */
+
+$colorone: #4d0b1b;
+$colortext: black;
+$fontone: "Nanum Brush Script", sans-serif;
+$fonttwo: "Abel", sans-serif;
+$transitionduration: 0.15s;
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 109px 0 0 0;
+    font-family: $fonttwo;
+    @media screen and (max-width: 600px) {
+        padding: 0 0 60px 0;
+    }
+}
+a {
+    text-decoration: none;
+    color: $colortext
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fonttwo;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 600px) {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: 25px;
+    @media screen and (max-width: 600px) {
+        font-size: 35px;
+        margin-bottom: 18px;
+    }
+}
+
+h3 {
+    font-size: 40px;
+    margin-bottom: 22px;
+    @media screen and (max-width: 600px) {
+        font-size: 32px;
+        margin-bottom: 18px;
+    }
+}
+
+h4 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    @media screen and (max-width: 600px) {
+        font-size: 27px;
+        margin-bottom: 18px;
+    }
+}
+
+h5,
+h6 {
+    font-size: 25px;
+    margin-bottom: 18px;
+    @media screen and (max-width: 600px) {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+}
+
+p {
+    font-size: 20px;
+    margin-top: 0;
+    &.large {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    @media screen and (max-width: 600px) {
+        font-size: 16px;
+        &.large {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+/* BUTTON  */
+
+.button {
+    border: 1px solid $colorone;
+    background-color: $colorone;
+    color: white;
+    padding: 20px 40px;
+    display: inline-flex;
+    justify-content: center;
+    transition: all ease-in $transitionduration;
+    font-family: $fontone;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: lowercase;
+    &:hover,
+    &:focus,
+    &:active {
+        color: white;
+        border: 1px solid lighten($colorone, 15%);
+        background-color: lighten($colorone, 15%);
+    }
+    & + .button {
+        margin-top: 15px;
+    }
+    &.ghost {
+        border: 1px solid $colorone;
+        background-color: transparent;
+        color: $colorone;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $colorone;
+            color: white;
+        }
+    }
+}
+
+/* NAV */
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    .logo {
+        font-family: "Nanum Brush Script", cursive;
+        color: $colortext;
+        font-size: 42px;
+        padding: 10px;
+    }
+    .nav-links {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        a {
+            color: $colorone;
+            text-decoration: none;
+            font-family: "Abel", sans-serif;
+            letter-spacing: 6px;
+            margin: 5px 30px;
+            font-family: "Abel", sans-serif;
+            letter-spacing: 6px;
+            color: $colorone;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all ease-in $transitionduration;
+            position: relative;
+            z-index: 1;
+            svg {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                
+                g {
+                    path {
+                        stroke-dasharray: 1800;
+                        stroke-dashoffset: -1800;
+                    }
+                }                
+            }
+            &:hover,
+            &:focus,
+            &:active {
+                svg {
+                    g {
+                        path {
+                            animation: stroke 1s;
+                            animation-fill-mode: forwards;
+                            animation-timing-function: ease-in-out;
+                        }
+                    }
+                    
+                }
+            }
+            @keyframes stroke {
+                from {
+                    stroke-dashoffset: -1800;
+                }
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+    }
+    
+    div.swipe {
+        display: none;
+    }
+    @media screen and (max-width: 600px) {
+        position: fixed;
+        z-index: 2;
+        top: auto;
+        bottom: 0;
+        height: 60px;
+        display: grid;
+        border-top: 3px solid $colorone;
+        overflow: scroll;
+        
+        .logo {
+            order: 2;
+        }
+        .nav-links {
+            grid-template-columns: auto auto auto auto auto auto auto;
+            a {
+                margin: 0px 20px;
+                text-align: left;
+                display: block;
+                letter-spacing: 4px;                
+                &.logo {
+                    display: none;
+                }
+            }
+        }
+        
+        div.swipe {
+            display: block;
+
+            @keyframes fadeInOut {
+                0% {
+                    color: $colorone;
+                }
+                50% {
+                    color: transparent;
+                }
+                100% {
+                    color: $colorone;
+                }
+            }
+            p {
+                font-size: 27px;
+                color: $colorone;
+                margin: 0 0 0 20px;
+                animation-name: fadeInOut;
+                animation-duration: 2s;
+                animation-iteration-count: 5;
+            }
+        }
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    display: grid;
+    margin-top: 3vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 3vw;
+
+    .top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 50px;
+        align-items: center;
+        .footer-column {
+            margin-bottom: 20px;
+            text-align: center;
+            h3 {
+                font-size: 29px;
+                margin-bottom: 0;
+            }
+            p:last-of-type {
+                margin-bottom: 0;
+            }
+            a {
+                margin: 5px 30px;
+                font-family: "Abel", sans-serif;
+                letter-spacing: 6px;
+                color: $colorone;
+                text-decoration: none;
+                font-size: 24px;
+                transition: all ease-in $transitionduration;
+                position: relative;
+                z-index: 1;
+                svg {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    
+                    g {
+                        path {
+                            stroke-dasharray: 1800;
+                            stroke-dashoffset: -1800;
+                        }
+                    }
+                    
+                }
+                &:hover,
+                &:focus,
+                &:active {
+                    svg {
+                        g {
+                            path {
+                                animation: stroke 1s;
+                                animation-fill-mode: forwards;
+                                animation-timing-function: ease-in-out;
+                            }
+                        }
+                        
+                    }
+                }
+                &.order {
+                    @extend .button;
+                }
+                @keyframes stroke {
+                    from {
+                        stroke-dashoffset: -1800;
+                    }
+                    to {
+                        stroke-dashoffset: 0;
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        margin-top: 1vw;
+        text-align: center;
+        a {
+            margin-right: 20px;
+            font-size: 14px;
+            color: rgba(128, 128, 128, 0.616);
+        }
+    }
+    @media screen and (max-width: 600px) {
+        display: block;
+        margin: 5vw;
+        .top {
+            grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+            .footer-column {
+                h3 {
+                    font-size: 20px;
+                }
+            }
+        }
+        .bottom {
+            line-height: 12px;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .top {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+/*
+* 
+*
+SECTIONS
+*
+*
+*/
+
+
+/* SECTION TITLE TEXT */
+
+section.title-text {
+    text-align: center;
+}
+
+// Basic vertical list
+// section.image-grid {
+//     display: flex;
+//     flex-wrap: wrap;
+//     img {
+//         width: 60%;
+//         margin-left: auto;
+//         margin-right: auto;
+//         margin-bottom: 40px;
+//     }
+// }
+
+// Can't use this because images are stretched
+// section.image-grid {
+//     display: flex;
+//     flex-wrap: wrap;
+//     img {
+//         height: 400px;
+        
+//         margin: 0 1rem 1rem 0;
+        
+//         flex: 1 0 auto;
+
+//     }
+// }
+
+// Can't use this, images being cut off
+// section.image-grid {
+//     display: flex;
+//     flex-wrap: wrap;
+//     div {
+//         height: 40vh;
+//         flex-grow: 1;
+//         img {
+//             max-height: 100%;
+//             min-width: 100%;
+//             object-fit: cover;
+//             vertical-align: bottom;
+//         }
+//     }    
+// }
+
+/* SECTION IMAGE GRID */
+
+// Using magicgrid
+section.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    .image-wrap {
+        width: 33.3333%;
+        height: auto;
+        position: relative;
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+        .image-info {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-in-out;
+            padding: 30px;
+            p,
+            h2 {
+                color: white;
+            }
+            a {
+                color: white;
+                text-decoration: underline;
+            }
+        }
+        &:hover {
+            .image-info {
+                opacity: 1;
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .image-wrap {
+            width: 49.9999%;
+        }
+    }
+}
+
+/* SECTION CONTENT IMAGE */
+
+section.content-image {
+    display: grid;
+    grid-column-gap: 80px;
+    grid-row-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    overflow: visible;
+    margin: 10vw;
+    img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    }
+    div {
+        display: grid;
+        align-content: center;
+    }
+    .text {
+        a {
+            justify-self: start;
+        }
+    }
+    .two-columns {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .image {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            left: -15%;
+            top: -11%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(207, 149, 149, 0.3);
+            z-index: -1;
+        }
+    }
+    &.image-right {
+        grid-template-columns: 3fr 2fr;
+        div:nth-of-type(2) {
+            order: 1;
+        }
+        div:nth-of-type(1) {
+            order: 2;
+        }
+        .image {
+            &:before {
+                left: auto;                
+                right: -17%;
+            }
+        }
+    }
+    &.portrait {
+        img {
+            height: 650px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &.landscape {
+        grid-template-columns: 2fr 2fr;
+        img {
+            height: 500px;
+        }
+        &.image-right {
+            grid-template-columns: 2fr 2fr;
+            div:nth-of-type(2) {
+                order: 1;
+            }
+            div:nth-of-type(1) {
+                order: 2;
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 25px;
+        margin: 5vw 5vw 10vw 5vw;
+        &.image-right {
+            grid-template-columns: 1fr;
+            div:nth-of-type(2) {
+                order: 2;
+            }
+            div:nth-of-type(1) {
+                order: 1;
+            }
+        }
+        img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

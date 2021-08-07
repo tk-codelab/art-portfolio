@@ -1,0 +1,19 @@
+{
+    "name": "art-portfolio",
+    "version": "1.0.0",
+    "description": "Art portfolio website",
+    "main": "app.js",
+    "scripts": {
+        "test": "test",
+        "start": "node app.js",
+        "scss": "node-sass --watch private/scss -o public/css"
+    },
+    "author": "Anonymous",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "node-sass": "^4.13.0"
+    }
+}
