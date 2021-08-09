@@ -3,6 +3,8 @@
 Art portfolio website for myself.
 I've been doing some oil painting and wanted to show what I made so far.
 
+View it at https://tk-creative.herokuapp.com/
+
 # To start the app
 
 To start the app, run the command 'node app.js' from the root of the project folder.
