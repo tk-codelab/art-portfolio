@@ -36,7 +36,14 @@ app.get('/all-sections/', function(req, res) {
     res.render('all-sections')
 });
   
-app.listen(3231, function() {
-    console.log('art portfolio app listening on port 3231!');
-});
+// app.listen(3231, function() {
+//     console.log('art portfolio app listening on port 3231!');
+// });
 
+// Setup for Heroku
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3231;
+  console.log('art portfolio app listening on port 3231!');
+}
+app.listen(port);
