@@ -14,7 +14,7 @@ To start compiling scss into css, use the command 'npm run scss' from the root o
 # TO DO / FIX
 
 - Make it possible to see past versions of a painting. Step-by-step progress slider, or something like that.
-- see the example paintings I've already described
+- see the example paintings/photos I've already described
 - responsive
 - cross browser
 - accessibility

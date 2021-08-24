@@ -83,6 +83,30 @@ p {
         font-size: 20px;
         margin-bottom: 15px; } }
 
+a.link-one {
+  font-family: "Abel", sans-serif;
+  letter-spacing: 6px;
+  text-decoration: none;
+  font-size: 24px; }
+
+a.tab {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  transform-origin: bottom;
+  clip-path: polygon(100% 0, 0 0, 100% 100%); }
+  a.tab span {
+    color: gray;
+    transform: rotate(45deg);
+    display: block;
+    transform-origin: bottom;
+    position: absolute;
+    top: 3px;
+    right: 12px; }
+
 /* BUTTON  */
 .button, footer .top .footer-column a.order {
   border: 1px solid #4d0b1b;
@@ -306,14 +330,17 @@ section.image-grid {
       bottom: 0;
       left: 0;
       display: grid;
-      justify-content: center;
+      justify-content: space-evenly;
+      justify-items: flex-start;
+      align-content: center;
       align-items: center;
       transition: opacity 0.5s ease-in-out;
       padding: 30px; }
       section.image-grid .image-wrap .image-info p,
-      section.image-grid .image-wrap .image-info h2 {
-        color: white; }
+      section.image-grid .image-wrap .image-info h2,
       section.image-grid .image-wrap .image-info a {
+        color: white; }
+      section.image-grid .image-wrap .image-info p a {
         color: white;
         text-decoration: underline; }
     section.image-grid .image-wrap:hover .image-info {
@@ -386,8 +413,23 @@ section.content-image {
         section.content-image.image-right div:nth-of-type(2) {
           order: 2; }
         section.content-image.image-right div:nth-of-type(1) {
-          order: 1; }
-      section.content-image img {
-        height: 250px;
-        width: 100%;
-        object-fit: cover; } }
+          order: 1; } }
+
+section.image-center {
+  display: grid;
+  margin: 15vw;
+  text-align: center;
+  justify-items: center; }
+  section.image-center img {
+    border: 5px solid #eaeaea; }
+  section.image-center .image {
+    position: relative;
+    width: fit-content;
+    overflow: hidden; }
+  section.image-center .text {
+    margin-top: 20px;
+    margin-left: 10vw;
+    margin-right: 10vw; }
+  @media screen and (max-width: 600px) {
+    section.image-center {
+      margin: 5vw 5vw 10vw 5vw; } }

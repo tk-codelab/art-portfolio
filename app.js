@@ -32,6 +32,10 @@ app.get('/contact/', function(req, res) {
     res.render('contact')
 });
 
+app.get('/portrait-alla-rembrandt/', function(req, res) {
+    res.render('portrait-alla-rembrandt')
+});
+
 app.get('/all-sections/', function(req, res) {
     res.render('all-sections')
 });

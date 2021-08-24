@@ -100,6 +100,33 @@ p {
     }
 }
 
+a.link-one {
+    font-family: "Abel", sans-serif;
+    letter-spacing: 6px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+a.tab {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    transform-origin: bottom;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    span {
+        color: gray;
+        transform: rotate(45deg);
+        display: block;
+        transform-origin: bottom;
+        position: absolute;
+        top: 3px;
+        right: 12px;
+    }
+}
+
 /* BUTTON  */
 
 .button {
@@ -450,7 +477,7 @@ section.image-grid {
             max-width: 100%;
             height: auto;
         }
-        .image-info {
+        .image-info { 
             opacity: 0;
             position: absolute;
             top: 0;
@@ -458,17 +485,22 @@ section.image-grid {
             bottom: 0;
             left: 0;
             display: grid;
-            justify-content: center;
+            justify-content: space-evenly;
+            justify-items: flex-start;
+            align-content: center;
             align-items: center;
             transition: opacity 0.5s ease-in-out;
             padding: 30px;
             p,
-            h2 {
-                color: white;
-            }
+            h2,
             a {
                 color: white;
-                text-decoration: underline;
+            }
+            p {
+                a {
+                    color: white;
+                    text-decoration: underline;
+                }
             }
         }
         &:hover {
@@ -574,10 +606,28 @@ section.content-image {
                 order: 1;
             }
         }
-        img {
-            height: 250px;
-            width: 100%;
-            object-fit: cover;
-        }
+    }
+}
+
+section.image-center { 
+    display: grid;
+    margin: 15vw;
+    text-align: center;
+    justify-items: center;
+    img {
+        border: 5px solid #eaeaea;
+    }
+    .image {
+        position: relative;
+        width: fit-content;
+        overflow: hidden;
+    }
+    .text {
+        margin-top: 20px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    @media screen and (max-width: 600px) {
+        margin: 5vw 5vw 10vw 5vw;
     }
 }
