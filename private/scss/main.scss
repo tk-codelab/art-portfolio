@@ -40,36 +40,44 @@ h6 {
 
 h1 {
     font-size: 60px;
+    line-height: 60px;
     margin-bottom: 30px;
     @media screen and (max-width: 600px) {
         font-size: 40px;
+        line-height: 40px;
         margin-bottom: 20px;
     }
 }
 
 h2 {
     font-size: 50px;
+    line-height: 50px;
     margin-bottom: 25px;
     @media screen and (max-width: 600px) {
         font-size: 35px;
+        line-height: 35px;
         margin-bottom: 18px;
     }
 }
 
 h3 {
     font-size: 40px;
+    line-height: 40px;
     margin-bottom: 22px;
     @media screen and (max-width: 600px) {
         font-size: 32px;
+        line-height: 32px;
         margin-bottom: 18px;
     }
 }
 
 h4 {
     font-size: 30px;
+    line-height: 30px;
     margin-bottom: 20px;
     @media screen and (max-width: 600px) {
         font-size: 27px;
+        line-height: 27px;
         margin-bottom: 18px;
     }
 }
@@ -77,24 +85,30 @@ h4 {
 h5,
 h6 {
     font-size: 25px;
+    line-height: 25px;
     margin-bottom: 18px;
     @media screen and (max-width: 600px) {
         font-size: 25px;
+        line-height: 25px;
         margin-bottom: 15px;
     }
 }
 
 p {
     font-size: 20px;
+    line-height: 24px;
     margin-top: 0;
     &.large {
         font-size: 24px;
+        line-height: 28px;
         margin-bottom: 30px;
     }
     @media screen and (max-width: 600px) {
         font-size: 16px;
+        line-height: 20px;
         &.large {
             font-size: 20px;
+            line-height: 24px;
             margin-bottom: 15px;
         }
     }
@@ -161,6 +175,27 @@ a.tab {
             background-color: $colorone;
             color: white;
         }
+    }
+}
+
+.button-white {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: gray !important;
+    padding: 20px 40px;
+    display: inline-flex;
+    justify-content: center;
+    transition: all ease-in $transitionduration;
+    font-family: $fonttwo;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: lowercase;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    & + .button {
+        margin-top: 15px;
     }
 }
 
@@ -470,8 +505,6 @@ section.image-grid {
     flex-wrap: wrap;
     .image-wrap {
         width: 33.3333%;
-        height: auto;
-        position: relative;
         img {
             width: 100%;
             max-width: 100%;
@@ -482,7 +515,7 @@ section.image-grid {
             position: absolute;
             top: 0;
             right: 0;
-            bottom: 0;
+            bottom: 5px;
             left: 0;
             display: grid;
             justify-content: space-evenly;
@@ -491,6 +524,7 @@ section.image-grid {
             align-items: center;
             transition: opacity 0.5s ease-in-out;
             padding: 30px;
+            margin: 0;
             p,
             h2,
             a {
@@ -554,6 +588,11 @@ section.content-image {
             height: 100%;
             background-color: rgba(207, 149, 149, 0.3);
             z-index: -1;
+        }
+    }
+    .image-dark-gray-overlay {
+        &:before {
+            background-color: rgb(147, 141, 137);
         }
     }
     &.image-right {

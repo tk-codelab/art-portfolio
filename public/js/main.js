@@ -6,6 +6,6 @@ window.addEventListener('load', (event) => {
         animate: true, // Optional.
         gutter: 0,
     });
-      
+
     magicGrid.listen();
 });
