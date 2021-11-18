@@ -543,9 +543,14 @@ section.image-grid {
             }
         }
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) and (min-width: 500px) {
         .image-wrap {
             width: 49.9999%;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .image-wrap {
+            width: 100%; 
         }
     }
 }
