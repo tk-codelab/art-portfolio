@@ -1,7 +1,7 @@
 /* GLOBAL SETTINGS */
 /* Settings that are used throughout the whole site. */
 
-$colorone: #4d0b1b;
+$colorone: #666666;
 $colortext: black;
 $fontone: "Nanum Brush Script", sans-serif;
 $fonttwo: "Abel", sans-serif;
@@ -14,6 +14,7 @@ body {
     font-family: $fonttwo;
     @media screen and (max-width: 600px) {
         padding: 0 0 60px 0;
+        margin-top: 17px;
     }
 }
 a {
@@ -217,10 +218,7 @@ nav {
         font-size: 42px;
         padding: 10px;
     }
-    .nav-links {
-        display: grid;
-        align-items: center;
-        justify-content: center;
+    .nav-links { 
         a {
             color: $colorone;
             text-decoration: none;
@@ -285,19 +283,23 @@ nav {
         bottom: 0;
         height: 60px;
         display: grid;
-        border-top: 3px solid $colorone;
         overflow: scroll;
         
         .logo {
             order: 2;
+            padding: 0 20px;
+            font-size: 25px;
         }
         .nav-links {
+            display: grid;
+            align-items: center;
             grid-template-columns: auto auto auto auto auto auto auto;
             a {
                 margin: 0px 20px;
                 text-align: left;
                 display: block;
-                letter-spacing: 4px;                
+                letter-spacing: 4px;  
+                font-size: 16px;              
                 &.logo {
                     display: none;
                 }
@@ -319,12 +321,15 @@ nav {
                 }
             }
             p {
-                font-size: 27px;
+                font-size: 26px;
                 color: $colorone;
                 margin: 0 0 0 20px;
                 animation-name: fadeInOut;
                 animation-duration: 2s;
-                animation-iteration-count: 5;
+                animation-iteration-count: 20;
+                animation-delay: 3s;
+                animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+                font-family: $fontone;
             }
         }
     }
@@ -510,7 +515,25 @@ section.image-grid {
             max-width: 100%;
             height: auto;
         }
-        .image-info { 
+        .i-icon {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            bottom: 18px;
+            background-color: rgba(255, 255, 255, 0.5);
+            right: 15px;
+            border-radius: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Nanum Brush Script';
+            font-size: 60px;
+            z-index: 1;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            color: white;
+        }
+        .image-info {
             opacity: 0;
             position: absolute;
             top: 0;
@@ -536,11 +559,9 @@ section.image-grid {
                     text-decoration: underline;
                 }
             }
-        }
-        &:hover {
-            .image-info {
-                opacity: 1;
-            }
+        }        
+        .image-info.active {
+            opacity: 1;
         }
     }
     @media screen and (max-width: 1350px) and (min-width: 500px) {
@@ -673,5 +694,38 @@ section.image-center {
     }
     @media screen and (max-width: 600px) {
         margin: 5vw 5vw 10vw 5vw;
+    }
+}
+
+/* SECTION PHOTO LIST */
+
+section.photo-list {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    .photo-wrap {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+        .photo-info {
+            margin-top: 20px;
+            ul {
+                list-style-type: none;
+            }
+        }
+    }
+    @media screen and (max-width: 1350px) and (min-width: 500px) {
+        
+    }
+    @media screen and (max-width: 500px) {
+        
     }
 }

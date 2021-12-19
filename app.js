@@ -40,6 +40,10 @@ app.get('/the-rower/', function (req, res) {
     res.render('the-rower')
 });
 
+app.get('/photography/', function (req, res) {
+    res.render('photography')
+});
+
 app.get('/all-sections/', function (req, res) {
     res.render('all-sections')
 });

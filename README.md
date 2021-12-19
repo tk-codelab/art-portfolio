@@ -13,9 +13,6 @@ To start compiling scss into css, use the command 'npm run scss' from the root o
 
 # TO DO / FIX
 
-- Make it possible to see past versions of a painting. Step-by-step progress slider, or something like that. WORKING ON IT
-- see the example paintings/photos I've already described
-- responsive
 - replace node-sass to https://sass-lang.com/dart-sass 
 - cross browser
 - accessibility
@@ -45,4 +42,4 @@ I believe in simplicity, minimalism. Work from necessity - only add things when 
 
 Decided not to use a CMS. Website will load faster without. CMS is often clogged, overpowered. 
 
-TK, october 2021
+TK, december 2021
