@@ -9,3 +9,15 @@ window.addEventListener('load', (event) => {
 
     magicGrid.listen();
 });
+
+// When icon 'i' is clicked, show the extra info
+const iIcons = document.querySelectorAll('.i-icon');
+iIcons.forEach(iconHandler);
+
+function iconHandler(icon) {
+    icon.addEventListener('click', eventHandler);
+}
+
+function eventHandler(e) {
+    e.currentTarget.nextElementSibling.classList.toggle("active");
+}
