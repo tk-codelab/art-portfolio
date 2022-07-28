@@ -11,9 +11,9 @@
     "author": "Anonymous",
     "license": "ISC",
     "dependencies": {
-        "body-parser": "^1.19.0",
-        "ejs": "^3.0.1",
-        "express": "^4.17.1",
+        "body-parser": "^1.20.0",
+        "ejs": "^3.1.8",
+        "express": "^4.18.1",
         "node-sass": "^4.14.1"
     },
     "engines": {
