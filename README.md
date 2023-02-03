@@ -1,13 +1,15 @@
 # What's this?
 
 Art portfolio website for myself.
-I've been doing some oil painting and wanted to show what I made so far.
+I've been doing some oil & digital painting, and wanted to show what I made so far.
 
-View it at https://tk-creative.herokuapp.com/
+View it at https://tk-creative.onrender.com/
 
 # To start the app
 
 To start the app, run the command 'node app.js' from the root of the project folder.
+
+Open on localhost:3231
 
 To start compiling scss into css, use the command 'npm run scss' from the root of the project folder.
 
@@ -42,4 +44,3 @@ I believe in simplicity, minimalism. Work from necessity - only add things when 
 
 Decided not to use a CMS. Website will load faster without. CMS is often clogged, overpowered. 
 
-TK, december 2021
