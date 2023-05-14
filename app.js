@@ -32,17 +32,14 @@ app.get('/contact/', function (req, res) {
     res.render('contact')
 });
 
+app.get('/about/', function (req, res) {
+    res.render('about')
+});
+
 app.get('/portrait-alla-rembrandt/', function (req, res) {
     res.render('portrait-alla-rembrandt')
 });
 
-app.get('/the-rower/', function (req, res) {
-    res.render('the-rower')
-});
-
-app.get('/photography/', function (req, res) {
-    res.render('photography')
-});
 
 app.get('/all-sections/', function (req, res) {
     res.render('all-sections')
@@ -52,7 +49,6 @@ app.get('/all-sections/', function (req, res) {
 //     console.log('art portfolio app listening on port 3231!');
 // });
 
-// Setup for Heroku
 let port = process.env.PORT;
 if (port == null || port == "") {
     port = 3231;
